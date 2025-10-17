@@ -3,149 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza Khan – Technical Program Manager</title>
+    <title>Hamza Khan – Portfolio</title>
     <!-- Google Fonts for sleek and modern typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Base styling */
         body {
             margin: 0;
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Open Sans', sans-serif;
+            background: #f7f9fc;
             color: #333;
             line-height: 1.6;
         }
-
-        /* Header section with PlayStation blue gradient */
-        .header {
-            background: linear-gradient(90deg, #003087 0%, #0a3f9e 100%);
-            color: #fff;
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 40px 20px;
+        }
+        header {
+            background: #1b3e72;
+            color: #fff;
+            padding: 60px 20px;
             text-align: center;
         }
-        .header h1 {
+        header h1 {
+            font-size: 36px;
             margin-bottom: 10px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
         }
-        .header p.tagline {
-            margin: 0;
+        header p {
             font-size: 18px;
-            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto 20px;
         }
-        .contact {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-        .contact span {
-            margin-right: 20px;
-        }
-        .contact a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        /* Divider line beneath header */
-        .divider {
-            border-bottom: 2px solid #0a3f9e;
-            margin: 20px auto;
-            max-width: 80%;
-        }
-
-        /* Section styling */
         .section {
-            padding: 20px 40px;
-            max-width: 800px;
-            margin: auto;
+            margin: 40px 0;
         }
         .section h2 {
-            color: #003087;
-            font-family: 'Poppins', sans-serif;
-            margin-top: 30px;
+            color: #1b3e72;
             margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 24px;
         }
-        .experience-item {
-            margin-bottom: 15px;
-        }
-        .experience-item h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-        .experience-item ul {
+        .timeline {
+            border-left: 4px solid #1b3e72;
+            margin-left: 20px;
             padding-left: 20px;
-            margin: 0;
         }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px 10px;
-            font-size: 12px;
-            color: #666;
+        .timeline-item {
+            margin-bottom: 30px;
+        }
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #1b3e72;
+        }
+        .timeline-item span {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 calc(50% - 20px);
+        }
+        .card h3 {
+            color: #1b3e72;
+            margin-top: 0;
+        }
+        @media (max-width: 600px) {
+            .card {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Hamza Khan</h1>
-        <!-- A bold, futuristic tagline emphasizing passion and innovation -->
-        <p class="tagline">Driving the future of connected experiences – lifelong PlayStation fan</p>
-        <div class="divider" style="border-bottom:1px solid #c9d5ff;"></div>
-        <!-- Contact details with icons represented by emojis -->
-        <div class="contact">
-            <span>📞 (678) 915-8476</span>
-            <span>✉️ hamzak40@gmail.com</span>
-            <span>🔗 <a href="https://www.linkedin.com/in/hamza-khan-80614587" target="_blank">LinkedIn</a></span>
-            <span>📍 Atlanta, GA</span>
-        </div>
-    </div>
-    <div class="section">
-        <!-- About Me Section -->
+<header>
+    <h1>Hamza Khan</h1>
+    <p>Driving the future of connected experiences – builder &amp; innovator</p>
+    <p><a href="mailto:hamzak40@gmail.com" style="color:#d1e0ff; text-decoration:none;">hamzak40@gmail.com</a> · Atlanta, GA · <a href="https://linkedin.com/in/hamza-khan-80614587" style="color:#d1e0ff; text-decoration:none;">LinkedIn</a></p>
+</header>
+<div class="container">
+
+    <section class="section" id="about">
         <h2>About Me</h2>
-        <p>Hello! I’m Hamza Khan, a seasoned technical program manager who has spent a career at the intersection of hardware and software. From building AI‑driven platforms to rolling out large‑scale point‑of‑sale solutions and transforming on‑prem systems into cloud‑first SaaS, I’ve always been driven by a passion for innovative technology and immersive experiences. A lifelong PlayStation fan, I thrive on merging storytelling and engineering to create products that delight users and move industries forward.</p>
+        <p>Hello! I'm Hamza Khan, a seasoned technical program manager who has spent a career at the intersection of hardware and software. From guiding AI-driven loan platforms to rolling out large‑scale point‑of‑sale solutions and transforming on‑prem systems into cloud‑first SaaS, I've always been driven by a passion for innovative technology and immersive experiences. As a lifelong learner, I thrive on merging storytelling and engineering to create products that delight users and move industries forward.</p>
+    </section>
 
-        <!-- Projects & Achievements Section -->
-        <h2>Projects & Achievements</h2>
-        <div class="experience-item">
-            <h3>AI Lending Platform at Hive</h3>
-            <ul>
-                <li>Designed and launched an AI‑powered loan management platform that integrated Azure Machine Learning, CRM automations, and real‑time data analytics.</li>
-                <li>Orchestrated cross‑team collaboration across six engineering streams, boosting release cadence predictability by 35%.</li>
-                <li>Migrated legacy financial workflows to modern cloud infrastructure, enabling scalable growth and enhanced user experience.</li>
-            </ul>
+    <section class="section" id="journey">
+        <h2>Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Technical Program Manager – Hive Financial Systems</h3>
+                <span>Mar 2023 – Sep 2025</span>
+                <ul>
+                    <li>Directed cloud-based AI loan‑management and CRM programs integrating Azure, Marketo and Dynamics 365.</li>
+                    <li>Drove Agile transformation and release cadence across six engineering streams, improving predictability by 35%.</li>
+                    <li>Partnered with leadership to migrate QuickBooks to Microsoft Business Central in collaboration with RSM.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Senior Project Manager – NCR Corporation</h3>
+                <span>Jul 2021 – Mar 2023</span>
+                <ul>
+                    <li>Led multi-million-dollar point‑of‑sale software and firmware rollouts for global fuel and convenience retailers.</li>
+                    <li>Managed PCI‑SSF audit readiness, system integrations, and firmware upgrades across hardware lines.</li>
+                    <li>Coordinated supply‑chain and engineering teams to ensure on-time global deployments.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Project Manager &amp; Principal Consultant – Tyler Technologies</h3>
+                <span>2013 – 2021</span>
+                <ul>
+                    <li>Spearheaded enterprise ERP and municipal software implementations for city governments nationwide.</li>
+                    <li>Transitioned on‑prem EnerGov and Munis modules to cloud environments, enhancing system reliability and reporting.</li>
+                    <li>Mentored cross‑functional teams in Agile and Lean delivery principles.</li>
+                </ul>
+            </div>
         </div>
-        <div class="experience-item">
-            <h3>Global POS Rollouts at NCR</h3>
-            <ul>
-                <li>Managed multi‑million‑dollar software and firmware deployments for fuel and convenience retailers across North America and Europe.</li>
-                <li>Implemented PCI‑SSF audit readiness and integrated payment systems to meet evolving regulatory requirements.</li>
-                <li>Coordinated engineering, product, and supply‑chain teams to deliver a cohesive platform upgrade on schedule.</li>
-            </ul>
-        </div>
-        <div class="experience-item">
-            <h3>Municipal ERP Transformation at Tyler Technologies</h3>
-            <ul>
-                <li>Led municipal clients through complex migrations from on‑prem ERP systems to cloud‑based solutions, improving reporting accuracy and operational agility.</li>
-                <li>Streamlined permitting, licensing, and inspections workflows for government agencies, helping cities better serve constituents.</li>
-                <li>Mentored analysts and consultants in Agile and Lean methodologies to foster a culture of continuous improvement.</li>
-            </ul>
-        </div>
+    </section>
 
-        <!-- Skills & Tools Section -->
-        <h2>Skills & Tools</h2>
-        <p>Program & Portfolio Management  |  Cross‑Functional Leadership  |  Product Strategy  |  Cloud & AI Platforms (Azure, AWS)  |  Jira & Confluence  |  DevOps  |  Data Analytics (Power BI, SQL)  |  API Integrations  |  Agile & Lean Methodologies</p>
+    <section class="section" id="clientwork">
+        <h2>LLC &amp; Client Work</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Senior Project Manager – InkredibleServiceLLC (Moody’s)</h3>
+                <span>Enterprise Banking Clients</span>
+                <ul>
+                    <li>Led end‑to‑end implementations of Moody’s CreditLens for banking clients, ensuring on‑time delivery and compliance alignment.</li>
+                    <li>Managed nCino‑to‑CreditLens integrations to enable seamless data flow and improve underwriting accuracy.</li>
+                    <li>Established Agile processes, coordinated stakeholders and provided post‑implementation support to drive adoption.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h3>Delivery Manager – Kreative Core Technologies</h3>
+                <span>Municipal ERP Projects</span>
+                <ul>
+                    <li>Managed end‑to‑end delivery of Tyler EnerGov and Munis ERP projects for municipal clients, including design, migration and cut‑over.</li>
+                    <li>Directed major implementations for City of Lancaster, TX and City of Oxnard, CA, ensuring seamless adoption of permitting and ERP modules.</li>
+                    <li>Coordinated GIS integrations, stakeholder communication and API work to provide a unified “Total Tyler” experience.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <!-- Education & Certifications Section -->
-        <h2>Education & Certifications</h2>
-        <p>Bachelor of Science — Georgia Gwinnett College</p>
-        <p>Artificial Intelligence in Project Management — Alison Learning Platform</p>
-        <p>Introduction to Cognitive Project Management in AI (CPMAI) — Cognilytica</p>
-    </div>
-    <footer>
-        &copy; 2025 Hamza Khan. All rights reserved.
-    </footer>
+    <section class="section" id="labs">
+        <h2>Labs &amp; Projects</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>PM CoachBot</h3>
+                <ul>
+                    <li>AI-driven chatbot delivering contextual PM guidance and sprint planning tips via Slack.</li>
+                    <li>Integrated with project tools (Jira, Asana) to answer planning and reporting questions.</li>
+                    <li>Continuous improvement pipeline based on user feedback and training new models.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Lift &amp; Track</h3>
+                <ul>
+                    <li>Mobile app using computer vision to count workout reps and track form.</li>
+                    <li>Built with Flutter and integrated with AWS Rekognition.</li>
+                    <li>Gamified tracking to encourage consistent training and improvement.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Release‑Risk Radar</h3>
+                <ul>
+                    <li>Analytics dashboard for surfacing release quality and risk patterns across engineering streams.</li>
+                    <li>Uses pipeline metrics and project data to flag high‑risk areas ahead of deployments.</li>
+                    <li>Built with Power BI and integrated with CI/CD tools.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="insights">
+        <h2>Insights</h2>
+        <p>I regularly share insights on program management, cloud migrations, fintech workflows and AI ethics in engineering. Stay tuned for upcoming articles and posts.</p>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Ready to talk about building world‑class systems or exploring new product ideas? <a href="mailto:hamzak40@gmail.com">Send me an email</a> or connect on <a href="https://linkedin.com/in/hamza-khan-80614587">LinkedIn</a>.</p>
+    </section>
+
+</div>
 </body>
 </html>
