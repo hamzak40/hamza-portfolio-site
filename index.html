@@ -1,211 +1,874 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza Khan – Portfolio</title>
-    <!-- Google Fonts for sleek and modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Base styling */
-        body {
-            margin: 0;
-            font-family: 'Open Sans', sans-serif;
-            background: #f7f9fc;
-            color: #333;
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            margin-top: 0;
-        }
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            background: #1b3e72;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-        .section {
-            margin: 40px 0;
-        }
-        .section h2 {
-            color: #1b3e72;
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-        .timeline {
-            border-left: 4px solid #1b3e72;
-            margin-left: 20px;
-            padding-left: 20px;
-        }
-        .timeline-item {
-            margin-bottom: 30px;
-        }
-        .timeline-item h3 {
-            margin: 0;
-            font-size: 20px;
-            color: #1b3e72;
-        }
-        .timeline-item span {
-            display: block;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 6px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
-            flex: 1 1 calc(50% - 20px);
-        }
-        .card h3 {
-            color: #1b3e72;
-            margin-top: 0;
-        }
-        @media (max-width: 600px) {
-            .card {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza Khan – Senior Technical Program Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --gold-dim: rgba(201,168,76,0.15);
+      --bg: #0A0A0B;
+      --bg2: #111113;
+      --bg3: #18181C;
+      --text: #E8E4DC;
+      --text-dim: #8A8680;
+      --border: rgba(201,168,76,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NOISE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,11,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.35s forwards;
+    }
+
+    .hero-name span { color: var(--gold); }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 300;
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+
+    .hero-summary {
+      max-width: 680px;
+      font-size: 1rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.65s forwards;
+    }
+
+    .hero-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .signal-tag {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      background: var(--gold-dim);
+      text-transform: uppercase;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.95s forwards;
+    }
+
+    .btn-primary {
+      padding: 0.85rem 2rem;
+      background: var(--gold);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-secondary {
+      padding: 0.85rem 2rem;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    /* IMPACT STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 5rem;
+    }
+
+    .stat-card {
+      background: var(--bg2);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* EXPERIENCE CARDS */
+    .experience-list { display: flex; flex-direction: column; gap: 2px; }
+
+    .exp-card {
+      background: var(--bg2);
+      border: 1px solid transparent;
+      border-left: 3px solid var(--gold);
+      padding: 2.5rem;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: default;
+    }
+
+    .exp-card:hover {
+      border-color: var(--border);
+      background: var(--bg3);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .exp-company {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .exp-dates {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--border);
+    }
+
+    .exp-role {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .exp-context {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.92rem;
+      color: var(--text-dim);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.65;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.7rem;
+      top: 0.35rem;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .exp-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    /* LLC SECTION */
+    .llc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 2px;
+    }
+
+    .llc-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .llc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .llc-card:hover { background: var(--bg3); }
+
+    .llc-client {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .llc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .llc-sub {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .llc-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .llc-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .llc-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+      top: -0.1rem;
+    }
+
+    /* EXPERTISE GRID */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      background: var(--border);
+    }
+
+    .expertise-card {
+      background: var(--bg2);
+      padding: 2rem;
+    }
+
+    .expertise-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .expertise-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .expertise-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .expertise-items li {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+    }
+
+    /* LABS */
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+    }
+
+    .lab-card {
+      background: var(--bg2);
+      padding: 2rem;
+      border: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .lab-card:hover { border-color: var(--border); }
+
+    .lab-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold-dim);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .lab-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .lab-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* DIVIDER */
+    .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      section { padding: 4rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .llc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<header>
-    <h1>Hamza Khan</h1>
-    <p>Driving the future of connected experiences – builder &amp; innovator</p>
-    <p><a href="mailto:hamzak40@gmail.com" style="color:#d1e0ff; text-decoration:none;">hamzak40@gmail.com</a> · Atlanta, GA · <a href="https://linkedin.com/in/hamza-khan-80614587" style="color:#d1e0ff; text-decoration:none;">LinkedIn</a></p>
-</header>
-<div class="container">
 
-    <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Hamza Khan, a seasoned technical program manager who has spent a career at the intersection of hardware and software. From guiding AI-driven loan platforms to rolling out large‑scale point‑of‑sale solutions and transforming on‑prem systems into cloud‑first SaaS, I've always been driven by a passion for innovative technology and immersive experiences. As a lifelong learner, I thrive on merging storytelling and engineering to create products that delight users and move industries forward.</p>
-    </section>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">HK</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section class="section" id="journey">
-        <h2>Journey</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Technical Program Manager – Hive Financial Systems</h3>
-                <span>Mar 2023 – Sep 2025</span>
-                <ul>
-                    <li>Directed cloud-based AI loan‑management and CRM programs integrating Azure, Marketo and Dynamics 365.</li>
-                    <li>Drove Agile transformation and release cadence across six engineering streams, improving predictability by 35%.</li>
-                    <li>Partnered with leadership to migrate QuickBooks to Microsoft Business Central in collaboration with RSM.</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>Senior Project Manager – NCR Corporation</h3>
-                <span>Jul 2021 – Mar 2023</span>
-                <ul>
-                    <li>Led multi-million-dollar point‑of‑sale software and firmware rollouts for global fuel and convenience retailers.</li>
-                    <li>Managed PCI‑SSF audit readiness, system integrations, and firmware upgrades across hardware lines.</li>
-                    <li>Coordinated supply‑chain and engineering teams to ensure on-time global deployments.</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>Project Manager &amp; Principal Consultant – Tyler Technologies</h3>
-                <span>2013 – 2021</span>
-                <ul>
-                    <li>Spearheaded enterprise ERP and municipal software implementations for city governments nationwide.</li>
-                    <li>Transitioned on‑prem EnerGov and Munis modules to cloud environments, enhancing system reliability and reporting.</li>
-                    <li>Mentored cross‑functional teams in Agile and Lean delivery principles.</li>
-                </ul>
-            </div>
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-eyebrow">Senior Technical Program Manager &amp; Product Manager</p>
+    <h1 class="hero-name">Hamza <span>Khan</span></h1>
+    <p class="hero-title">Bridging engineering architecture and business outcomes at scale.</p>
+    <p class="hero-summary">
+      9+ years leading complex, cross-functional programs across fintech, enterprise SaaS, and payments. Known for operating close to system architecture, influencing organizations without direct authority, and delivering platform-scale initiatives from the ground up.
+    </p>
+    <div class="hero-signals">
+      <span class="signal-tag">Distributed Systems</span>
+      <span class="signal-tag">Microservices &amp; APIs</span>
+      <span class="signal-tag">AI / ML Platforms</span>
+      <span class="signal-tag">Event-Driven Architecture</span>
+      <span class="signal-tag">Cross-Org Influence</span>
+      <span class="signal-tag">Platform Ownership</span>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:hamzak40@gmail.com" class="btn-primary">Get in Touch</a>
+      <a href="https://linkedin.com/in/hamza-khan-80614587" target="_blank" class="btn-secondary">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- IMPACT STATS -->
+  <section>
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-number">9+</div>
+        <div class="stat-label">Years of Delivery</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Engineers Led</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20%</div>
+        <div class="stat-label">Faster Loan Approvals</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">25%</div>
+        <div class="stat-label">Delivery Predictability Gain</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Enterprise Platforms Delivered</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="experience-list">
+
+      <!-- HIVE -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-company">Hive Financial Systems</div>
+          <span class="exp-dates">Mar 2023 – Sep 2025</span>
         </div>
-    </section>
-
-    <section class="section" id="clientwork">
-        <h2>LLC &amp; Client Work</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Senior Project Manager – InkredibleServiceLLC (Moody’s)</h3>
-                <span>Enterprise Banking Clients</span>
-                <ul>
-                    <li>Led end‑to‑end implementations of Moody’s CreditLens for banking clients, ensuring on‑time delivery and compliance alignment.</li>
-                    <li>Managed nCino‑to‑CreditLens integrations to enable seamless data flow and improve underwriting accuracy.</li>
-                    <li>Established Agile processes, coordinated stakeholders and provided post‑implementation support to drive adoption.</li>
-                </ul>
-            </div>
-            <div class="timeline-item">
-                <h3>Delivery Manager – Kreative Core Technologies</h3>
-                <span>Municipal ERP Projects</span>
-                <ul>
-                    <li>Managed end‑to‑end delivery of Tyler EnerGov and Munis ERP projects for municipal clients, including design, migration and cut‑over.</li>
-                    <li>Directed major implementations for City of Lancaster, TX and City of Oxnard, CA, ensuring seamless adoption of permitting and ERP modules.</li>
-                    <li>Coordinated GIS integrations, stakeholder communication and API work to provide a unified “Total Tyler” experience.</li>
-                </ul>
-            </div>
+        <div class="exp-role">Technical Program Manager / Product Manager</div>
+        <div class="exp-context">Fintech startup leveraging AI and automation to modernize the lending experience — Atlanta, GA</div>
+        <ul class="exp-bullets">
+          <li>Functioned as the sole TPM and PM, simultaneously owning enterprise-wide platform delivery and product management for Lending Operations, influencing engineering, product, and compliance teams across all active initiatives without direct authority.</li>
+          <li>Led development of a scalable underwriting platform supporting thousands of borrower applications, implementing AI-driven risk scoring through API-based microservices architecture and event-driven data pipelines, reducing loan approval times by 20%.</li>
+          <li>Led concurrent enterprise platform migrations across marketing automation (Adobe Marketo with LMS and Event Bus integrations), Loan Management System (TaskSuite), cloud infrastructure (Microsoft Azure), and investor data (Microsoft Dynamics CRM), ensuring system interoperability throughout each transition.</li>
+          <li>Built the company's SDLC and program governance infrastructure from the ground up in partnership with executive leadership, increasing delivery predictability by 25%.</li>
+          <li>Owned the full product lifecycle for Lending Operations platforms — roadmap, PRDs, feature delivery, bug resolution, and post-launch monitoring across Marketo, Slicktext, Mailchimp, the Event Bus, and LMS communications.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Microservices</span>
+          <span class="exp-tag">Event-Driven Architecture</span>
+          <span class="exp-tag">AI / ML</span>
+          <span class="exp-tag">Adobe Marketo</span>
+          <span class="exp-tag">Microsoft Azure</span>
+          <span class="exp-tag">Jira</span>
+          <span class="exp-tag">Product Roadmaps</span>
         </div>
-    </section>
+      </div>
 
-    <section class="section" id="labs">
-        <h2>Labs &amp; Projects</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>PM CoachBot</h3>
-                <ul>
-                    <li>AI-driven chatbot delivering contextual PM guidance and sprint planning tips via Slack.</li>
-                    <li>Integrated with project tools (Jira, Asana) to answer planning and reporting questions.</li>
-                    <li>Continuous improvement pipeline based on user feedback and training new models.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Lift &amp; Track</h3>
-                <ul>
-                    <li>Mobile app using computer vision to count workout reps and track form.</li>
-                    <li>Built with Flutter and integrated with AWS Rekognition.</li>
-                    <li>Gamified tracking to encourage consistent training and improvement.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Release‑Risk Radar</h3>
-                <ul>
-                    <li>Analytics dashboard for surfacing release quality and risk patterns across engineering streams.</li>
-                    <li>Uses pipeline metrics and project data to flag high‑risk areas ahead of deployments.</li>
-                    <li>Built with Power BI and integrated with CI/CD tools.</li>
-                </ul>
-            </div>
+      <!-- NCR -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-company">NCR Corporation</div>
+          <span class="exp-dates">Jul 2021 – Mar 2023</span>
         </div>
-    </section>
+        <div class="exp-role">Senior Project Manager, Engineering Operations</div>
+        <div class="exp-context">Global leader in retail technology and POS solutions — Atlanta, GA</div>
+        <ul class="exp-bullets">
+          <li>Served as primary client-facing program lead for 10+ POS platform implementations supporting large enterprise retail clients across distributed retail infrastructure and payment processing systems.</li>
+          <li>Led matrixed delivery teams of 50+ engineers, QA specialists, and PMs across multiple global engineering groups, reducing cross-team misalignment by 40%.</li>
+          <li>Introduced executive-level PI readouts and sprint health reporting that aligned engineering, product, and executive stakeholders across multiple business units, improving dependency visibility across global teams.</li>
+          <li>Led end-to-end PCI-SSF certification programs, coordinating engineering, QA, and security teams across compliance requirements and audit readiness.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Distributed Systems</span>
+          <span class="exp-tag">Payment Processing</span>
+          <span class="exp-tag">PCI-SSF</span>
+          <span class="exp-tag">Matrixed Teams</span>
+          <span class="exp-tag">Enterprise Retail</span>
+        </div>
+      </div>
 
-    <section class="section" id="insights">
-        <h2>Insights</h2>
-        <p>I regularly share insights on program management, cloud migrations, fintech workflows and AI ethics in engineering. Stay tuned for upcoming articles and posts.</p>
-    </section>
+      <!-- TYLER -->
+      <div class="exp-card fade-in">
+        <div class="exp-header">
+          <div class="exp-company">Tyler Technologies</div>
+          <span class="exp-dates">Aug 2016 – Jul 2021</span>
+        </div>
+        <div class="exp-role">Multiple Roles — Five Promotions</div>
+        <div class="exp-context">Municipal software leader, EnerGov and DHD product lines — Duluth, GA</div>
+        <ul class="exp-bullets">
+          <li>Progressed from Technical Software Analyst to Supervisory Team Lead through five promotions, leading SaaS implementations, client success, and cross-functional delivery.</li>
+          <li>Led 12+ EnerGov implementations across U.S. municipalities as primary client contact, reducing post-go-live defects by 30%.</li>
+          <li>Managed 8+ client-facing SaaS implementation projects for the Tyler DHD product line as Technical Project Manager.</li>
+          <li>Secured $250K+ in upsell revenue and maintained 100% client retention as Principal Consultant.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Municipal SaaS</span>
+          <span class="exp-tag">Client-Facing Delivery</span>
+          <span class="exp-tag">EnerGov</span>
+          <span class="exp-tag">Agile</span>
+        </div>
+      </div>
 
-    <section class="section" id="contact">
-        <h2>Contact</h2>
-        <p>Ready to talk about building world‑class systems or exploring new product ideas? <a href="mailto:hamzak40@gmail.com">Send me an email</a> or connect on <a href="https://linkedin.com/in/hamza-khan-80614587">LinkedIn</a>.</p>
-    </section>
+    </div>
+  </section>
 
-</div>
+  <!-- LLC / CONSULTING -->
+  <section id="consulting">
+    <p class="section-label">Independent Work</p>
+    <h2 class="section-title">Consulting &amp; LLC Experience</h2>
+    <div class="gold-rule"></div>
+
+    <div class="llc-grid">
+
+      <div class="llc-card fade-in">
+        <div class="llc-client">Inkredible Service LLC — Moody's</div>
+        <div class="llc-title">Senior Project Manager</div>
+        <div class="llc-sub">Enterprise Banking Clients</div>
+        <ul class="llc-bullets">
+          <li>Led end-to-end implementations of Moody's CreditLens for enterprise banking clients, ensuring on-time delivery and compliance alignment.</li>
+          <li>Managed nCino-to-CreditLens API integrations to enable seamless data flow and improve underwriting accuracy across distributed banking systems.</li>
+          <li>Established Agile delivery processes, coordinated cross-functional stakeholders, and provided post-implementation support to drive adoption.</li>
+        </ul>
+      </div>
+
+      <div class="llc-card fade-in">
+        <div class="llc-client">Kreative Core Technologies</div>
+        <div class="llc-title">Delivery Manager</div>
+        <div class="llc-sub">Municipal ERP Projects</div>
+        <ul class="llc-bullets">
+          <li>Managed end-to-end delivery of Tyler EnerGov and Munis ERP projects for municipal clients including City of Lancaster, TX and City of Oxnard, CA.</li>
+          <li>Coordinated GIS integrations, stakeholder communication, and API work to deliver a unified Total Tyler experience across permitting and ERP modules.</li>
+          <li>Directed design, data migration, and cutover planning across multiple concurrent municipal implementations.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">Technical Expertise</h2>
+
+    <div class="expertise-grid fade-in">
+      <div class="expertise-card">
+        <div class="expertise-icon">⬡</div>
+        <div class="expertise-title">Systems Architecture</div>
+        <ul class="expertise-items">
+          <li>Microservices Architecture</li>
+          <li>Distributed Systems</li>
+          <li>Event-Driven Architecture</li>
+          <li>REST API Integrations</li>
+          <li>Service-Oriented Architecture</li>
+          <li>System Interoperability</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">◈</div>
+        <div class="expertise-title">Platform &amp; Delivery</div>
+        <ul class="expertise-items">
+          <li>End-to-End SDLC Ownership</li>
+          <li>Product Roadmaps &amp; PRDs</li>
+          <li>PMO Development</li>
+          <li>CI/CD and DevOps Delivery</li>
+          <li>Agile, Scrum, Kanban</li>
+          <li>Release &amp; Risk Management</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">◎</div>
+        <div class="expertise-title">AI &amp; Data</div>
+        <ul class="expertise-items">
+          <li>AI/ML System Integrations</li>
+          <li>Data Pipelines</li>
+          <li>Cloud Platforms (Azure)</li>
+          <li>Automated Credit Decisioning</li>
+          <li>Risk Scoring Models</li>
+          <li>Datadog &amp; Observability</li>
+        </ul>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">◇</div>
+        <div class="expertise-title">Leadership &amp; Influence</div>
+        <ul class="expertise-items">
+          <li>Cross-Org Influence Without Authority</li>
+          <li>Executive Stakeholder Alignment</li>
+          <li>Client-Facing Delivery</li>
+          <li>Matrixed Team Leadership</li>
+          <li>Compliance Programs (PCI-SSF)</li>
+          <li>Business-to-Engineering Translation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LABS -->
+  <section id="labs">
+    <p class="section-label">Side Projects</p>
+    <h2 class="section-title">Labs &amp; Projects</h2>
+
+    <div class="labs-grid">
+      <div class="lab-card fade-in">
+        <div class="lab-number">01</div>
+        <div class="lab-title">PM CoachBot</div>
+        <p class="lab-desc">AI-driven chatbot delivering contextual program management guidance and sprint planning support via Slack, integrated with Jira and Asana for live planning and reporting queries.</p>
+      </div>
+      <div class="lab-card fade-in">
+        <div class="lab-number">02</div>
+        <div class="lab-title">Release-Risk Radar</div>
+        <p class="lab-desc">Analytics dashboard surfacing release quality and risk patterns across engineering streams. Uses pipeline metrics and project data to flag high-risk areas ahead of deployments. Built with Power BI and integrated with CI/CD tooling.</p>
+      </div>
+      <div class="lab-card fade-in">
+        <div class="lab-number">03</div>
+        <div class="lab-title">Lift &amp; Track</div>
+        <p class="lab-desc">Mobile app using computer vision to count workout reps and track form. Built with Flutter and AWS Rekognition. Gamified tracking to encourage consistent training.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Let's Connect</p>
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="gold-rule"></div>
+    <p style="color: var(--text-dim); max-width: 500px; margin-bottom: 2rem; font-size: 0.95rem;">
+      Open to senior TPM, Principal PM, and Director-level program leadership roles. Also available for consulting engagements through Inkredible Service LLC.
+    </p>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="mailto:hamzak40@gmail.com" class="btn-primary">hamzak40@gmail.com</a>
+      <a href="https://linkedin.com/in/hamza-khan-80614587" target="_blank" class="btn-secondary">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Hamza Khan</span>
+    <ul class="footer-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="mailto:hamzak40@gmail.com">Email</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
