@@ -74,7 +74,7 @@
       opacity:0; animation:fadeUp 0.8s ease 0.45s forwards;
     }
     .hero-sub {
-      font-size:1rem; color:var(--text-dim); max-width:580px; margin-bottom:2.4rem; line-height:1.8;
+      font-size:1rem; color:var(--text-dim); max-width:620px; margin-bottom:2.4rem; line-height:1.8;
       opacity:0; animation:fadeUp 0.8s ease 0.7s forwards;
     }
     .tag-row {
@@ -132,7 +132,7 @@
     .exp-context { font-size:0.78rem; color:var(--text-muted); font-style:italic; margin-bottom:1rem; }
     .exp-bullets { list-style:none; padding:0; }
     .exp-bullets li { font-size:0.88rem; color:var(--text-dim); padding:0.3rem 0 0.3rem 1.1rem; position:relative; line-height:1.65; }
-    .exp-bullets li::before { content:'—'; position:absolute; left:0; color:var(--gold-dim); font-size:0.75rem; }
+    .exp-bullets li::before { content:'\2014'; position:absolute; left:0; color:var(--gold-dim); font-size:0.75rem; }
     .exp-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1rem; }
     .exp-tag { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; color:var(--text-muted); border:1px solid var(--bs); padding:0.2rem 0.55rem; border-radius:2px; }
     .current-badge {
@@ -152,9 +152,12 @@
     .consulting-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.2rem; }
     .consulting-card { border:1px solid var(--bs); border-radius:4px; padding:1.8rem; background:var(--surface); opacity:0; transform:translateY(20px); transition:opacity 0.5s ease,transform 0.5s ease; }
     .consulting-card.visible { opacity:1; transform:translateY(0); }
+    .consulting-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.4rem; }
     .consulting-client { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--text); margin-bottom:0.2rem; }
+    .consulting-date { font-family:'DM Mono',monospace; font-size:0.66rem; color:var(--text-muted); letter-spacing:0.08em; white-space:nowrap; }
     .consulting-role { font-size:0.78rem; color:var(--gold); letter-spacing:0.06em; margin-bottom:0.15rem; }
     .consulting-context { font-size:0.75rem; color:var(--text-muted); font-style:italic; margin-bottom:1rem; }
+    .consulting-note { font-size:0.8rem; color:var(--text-dim); max-width:680px; margin-bottom:2rem; line-height:1.7; }
 
     /* AGENTS */
     .agents-intro { font-size:0.9rem; color:var(--text-dim); max-width:640px; margin-bottom:2.5rem; line-height:1.8; }
@@ -279,17 +282,17 @@
         <canvas id="hero-canvas"></canvas>
         <div class="hero-bg"></div>
         <div class="hero-inner">
-          <p class="hero-label">Senior Technical Program Manager &amp; Product Manager</p>
+          <p class="hero-label">Senior Technical Program Manager</p>
           <h1>Hamza Khan</h1>
-          <p class="hero-sub">Bridging engineering architecture and business outcomes at scale. 9+ years leading complex, cross-functional programs across fintech, enterprise SaaS, and payments. Known for operating close to system architecture, influencing organizations without direct authority, and delivering platform-scale initiatives from the ground up.</p>
+          <p class="hero-sub">Ten years leading complex software programs across fintech and payments, enterprise retail technology, manufacturing, and government SaaS. I integrate acquired and legacy platforms into single enterprise systems, and build the delivery infrastructure that makes it repeatable. PMO and governance functions built from the ground up three times.</p>
           <div class="tag-row">
-            <span class="tag">Distributed Systems</span>
-            <span class="tag">Microservices &amp; APIs</span>
-            <span class="tag">AI / ML Platforms</span>
-            <span class="tag">Event-Driven Architecture</span>
-            <span class="tag">Cross-Org Influence</span>
-            <span class="tag">Platform Ownership</span>
-            <span class="tag">PMO Transformation</span>
+            <span class="tag">Technical Program Management</span>
+            <span class="tag">PMO &amp; EPMO Build-Out</span>
+            <span class="tag">Platform Integration</span>
+            <span class="tag">Enterprise Migrations</span>
+            <span class="tag">Portfolio Governance</span>
+            <span class="tag">Product Ownership</span>
+            <span class="tag">AI / ML Delivery</span>
             <span class="tag">Agentic AI</span>
           </div>
           <div class="hero-cta">
@@ -299,11 +302,11 @@
         </div>
       </div>
       <div class="stats-bar">
-        <div class="stat"><span class="stat-num">9+</span><div class="stat-label">Years of Delivery</div></div>
+        <div class="stat"><span class="stat-num">10</span><div class="stat-label">Years of Delivery</div></div>
+        <div class="stat"><span class="stat-num">3x</span><div class="stat-label">PMOs Built From Scratch</div></div>
         <div class="stat"><span class="stat-num">50+</span><div class="stat-label">Engineers Led</div></div>
         <div class="stat"><span class="stat-num">20%</span><div class="stat-label">Faster Loan Approvals</div></div>
         <div class="stat"><span class="stat-num">25%</span><div class="stat-label">Delivery Predictability Gain</div></div>
-        <div class="stat"><span class="stat-num">10+</span><div class="stat-label">Enterprise Platforms Delivered</div></div>
       </div>
     </div>
 
@@ -313,66 +316,74 @@
         <p class="section-label">Career</p>
         <h2 class="section-title">Professional Experience</h2>
         <div class="gold-rule"></div>
+
         <div class="exp-card fade-in">
           <div class="exp-header">
-            <span class="exp-company">Eliassen Group <span class="current-badge">Current</span></span>
-            <span class="exp-date">Oct 2025 – Present</span>
+            <span class="exp-company">Neptune Technology Group <span class="current-badge">Current</span></span>
+            <span class="exp-date">Apr 2026 &ndash; Present</span>
           </div>
-          <div class="exp-title">Senior PMO Transformation Consultant &nbsp;·&nbsp; Client: Neptune Technology Group</div>
-          <div class="exp-context">Contractor engagement — Manufacturing technology sector, Atlanta, GA</div>
+          <div class="exp-title">Senior PMO Transformation Consultant &nbsp;·&nbsp; Contract engagement via Eliassen Group</div>
+          <div class="exp-context">Manufacturing technology company executing an enterprise-wide transformation to establish a scalable EPMO operating model, Atlanta, GA</div>
           <ul class="exp-bullets">
-            <li>Embedded as senior PMO consultant at Neptune Technology Group, leading a ground-up PMO transformation initiative in partnership with the PMO Director to establish delivery standards across a manufacturing technology environment.</li>
-            <li>Designed and implemented a phased adoption strategy — building stakeholder trust before introducing governance frameworks, co-designing processes with team leads, and sequencing change using ADKAR principles to reduce resistance and drive lasting adoption.</li>
-            <li>Developed standardized project delivery templates, RACI frameworks, decision gates, and intake processes to move the organization toward consistent, measurable program execution.</li>
-            <li>Established KPI tracking and reporting cadences to provide leadership with real-time visibility into delivery health, resource utilization, and portfolio risk across concurrent initiatives.</li>
+            <li>Delivered a current-state assessment built on 40+ stakeholder interviews spanning individual contributors through C-suite, diagnosing structural gaps in governance, delivery accountability, role clarity, and portfolio visibility across 20+ active projects.</li>
+            <li>Presented findings and operating model recommendations to the C-suite and secured executive approval for a dual operating model and a three-tier delivery structure spanning portfolio, program, and solution delivery teams.</li>
+            <li>Designing the persistent solution delivery team model that replaces matrix-based handoffs with defined ownership and accountability, and leading the change management and organizational transition planning required for enterprise-wide adoption.</li>
+            <li>Architecting Jira as the enterprise single source of truth across Product and PMO, unifying Jira Product Discovery and Advanced Roadmaps for product planning, executive portfolio visibility, and program tracking.</li>
+            <li>Designing a capacity-based budgeting and planning model that shifts resource allocation from intent-based project funding to data-driven capacity planning tied to strategic priority.</li>
+            <li>Establishing an integrated quarterly planning cadence aligning hardware, firmware, software, and IT delivery teams onto a shared rhythm, embedded through structured training and organizational transition support.</li>
           </ul>
-          <div class="exp-tags"><span class="exp-tag">PMO Transformation</span><span class="exp-tag">ADKAR</span><span class="exp-tag">Governance Design</span><span class="exp-tag">Change Management</span><span class="exp-tag">Manufacturing Tech</span><span class="exp-tag">KPI Frameworks</span></div>
+          <div class="exp-tags"><span class="exp-tag">EPMO Design</span><span class="exp-tag">Operating Model</span><span class="exp-tag">Portfolio Governance</span><span class="exp-tag">Capacity Planning</span><span class="exp-tag">Change Management</span><span class="exp-tag">Jira Advanced Roadmaps</span></div>
         </div>
+
         <div class="exp-card fade-in">
           <div class="exp-header">
             <span class="exp-company">Hive Financial Systems</span>
-            <span class="exp-date">Mar 2023 – Sep 2025</span>
+            <span class="exp-date">Mar 2023 &ndash; Sep 2025</span>
           </div>
           <div class="exp-title">Technical Program Manager / Product Manager</div>
-          <div class="exp-context">Fintech startup leveraging AI and automation to modernize the lending experience — Atlanta, GA</div>
+          <div class="exp-context">Fintech lender and platform provider in sub-prime consumer lending, Atlanta, GA</div>
           <ul class="exp-bullets">
-            <li>Functioned as the sole TPM and PM, simultaneously owning enterprise-wide platform delivery and product management for Lending Operations, influencing engineering, product, and compliance teams across all active initiatives without direct authority.</li>
-            <li>Led development of a scalable underwriting platform supporting thousands of borrower applications, implementing AI-driven risk scoring through API-based microservices architecture and event-driven data pipelines, reducing loan approval times by 20%.</li>
-            <li>Led concurrent enterprise platform migrations across marketing automation (Adobe Marketo with LMS and Event Bus integrations), Loan Management System (TaskSuite), cloud infrastructure (Microsoft Azure), and investor data (Microsoft Dynamics CRM), ensuring system interoperability throughout each transition.</li>
-            <li>Built the company's SDLC and program governance infrastructure from the ground up in partnership with executive leadership, increasing delivery predictability by 25%.</li>
-            <li>Owned the full product lifecycle for Lending Operations platforms — roadmap, PRDs, feature delivery, bug resolution, and post-launch monitoring across Marketo, Slicktext, Mailchimp, the Event Bus, and LMS communications.</li>
+            <li>Served as the company's sole TPM and PM, owning enterprise-wide program delivery across engineering, product, and compliance while building the PMO, SDLC, and governance infrastructure from scratch.</li>
+            <li>Product Manager for Marketing and Messaging within Lending Operations, owning the roadmap, PRDs, and backlog for all outbound consumer communication, product marketing, and the integrations keeping those channels connected to the loan management system across Marketo, SlickText, Mailchimp, and the event bus.</li>
+            <li>As technical program manager, drove the build of a full-stack underwriting platform supporting thousands of borrower applications, implementing machine learning credit scoring and automated bank transaction analysis through API-based services and event-driven data pipelines, cutting loan approval times 20%.</li>
+            <li>Led concurrent enterprise platform migrations across marketing automation (Adobe Marketo), loan management (TaskSuite), cloud infrastructure (Microsoft Azure), finance (Business Central), and CRM (Microsoft Dynamics), maintaining system interoperability throughout each transition.</li>
+            <li>Partnered with the CTO and VP of Engineering to translate company goals into OKRs and establish the planning cadence governing delivery, increasing delivery predictability 25% and team velocity 30%.</li>
           </ul>
-          <div class="exp-tags"><span class="exp-tag">Microservices</span><span class="exp-tag">Event-Driven Architecture</span><span class="exp-tag">AI / ML</span><span class="exp-tag">Adobe Marketo</span><span class="exp-tag">Microsoft Azure</span><span class="exp-tag">Jira</span><span class="exp-tag">Product Roadmaps</span></div>
+          <div class="exp-tags"><span class="exp-tag">Product Ownership</span><span class="exp-tag">AI / ML Credit Scoring</span><span class="exp-tag">Event-Driven Architecture</span><span class="exp-tag">Adobe Marketo</span><span class="exp-tag">Microsoft Azure</span><span class="exp-tag">PMO Build-Out</span></div>
         </div>
+
         <div class="exp-card fade-in">
           <div class="exp-header">
             <span class="exp-company">NCR Corporation</span>
-            <span class="exp-date">Jul 2021 – Mar 2023</span>
+            <span class="exp-date">Jul 2021 &ndash; Feb 2023</span>
           </div>
           <div class="exp-title">Senior Project Manager, Engineering Operations</div>
-          <div class="exp-context">Global leader in retail technology and POS solutions — Atlanta, GA</div>
+          <div class="exp-context">Global leader in retail technology, POS, and payment-processing software, Atlanta, GA</div>
           <ul class="exp-bullets">
-            <li>Served as primary client-facing program lead for 10+ POS platform implementations supporting large enterprise retail clients across distributed retail infrastructure and payment processing systems.</li>
-            <li>Led matrixed delivery teams of 50+ engineers, QA specialists, and PMs across multiple global engineering groups, reducing cross-team misalignment by 40%.</li>
-            <li>Introduced executive-level PI readouts and sprint health reporting that aligned engineering, product, and executive stakeholders across multiple business units, improving dependency visibility across global teams.</li>
-            <li>Led end-to-end PCI-SSF certification programs, coordinating engineering, QA, and security teams across compliance requirements and audit readiness.</li>
+            <li>Directed a portfolio of 10+ concurrent customer-funded software development and POS implementation programs for major convenience and fuel retail clients, owning scope, schedule, risk, and cross-team execution.</li>
+            <li>Guided matrixed delivery teams of 50+ engineers, QA specialists, and project managers across multiple global engineering groups, cutting cross-team misalignment 40%.</li>
+            <li>Led NCR's PCI-SSF compliance audit across engineering, QA, and security teams, achieving full certification of POS platforms and strengthening regulatory and security posture.</li>
+            <li>Delivered hardware and firmware lifecycle programs including site controller installations, POS and payment device rollouts, and forecourt and fuel pump controller validation through SIT, UAT, and pilot.</li>
+            <li>Built the portfolio-level dashboard consolidating status, risk, and dependencies across all implementations, which became the foundation for executive PI readouts.</li>
           </ul>
-          <div class="exp-tags"><span class="exp-tag">Distributed Systems</span><span class="exp-tag">Payment Processing</span><span class="exp-tag">PCI-SSF</span><span class="exp-tag">Matrixed Teams</span><span class="exp-tag">Enterprise Retail</span></div>
+          <div class="exp-tags"><span class="exp-tag">Payment Processing</span><span class="exp-tag">PCI-SSF</span><span class="exp-tag">Hardware Lifecycle</span><span class="exp-tag">Matrixed Teams</span><span class="exp-tag">Enterprise Retail</span></div>
         </div>
+
         <div class="exp-card fade-in">
           <div class="exp-header">
             <span class="exp-company">Tyler Technologies</span>
-            <span class="exp-date">Aug 2016 – Jul 2021</span>
+            <span class="exp-date">Aug 2016 &ndash; Jul 2021</span>
           </div>
-          <div class="exp-title">Multiple Roles — Five Promotions</div>
-          <div class="exp-context">Municipal software leader, EnerGov and DHD product lines — Duluth, GA</div>
+          <div class="exp-title">Five Progressive Roles &nbsp;·&nbsp; Technical Software Analyst to PMO Manager</div>
+          <div class="exp-context">Municipal SaaS division serving U.S. cities, counties, and state agencies across the EP&amp;L permitting and DHD environmental health product lines, Duluth, GA</div>
           <ul class="exp-bullets">
-            <li>Progressed from Technical Software Analyst to Supervisory Team Lead through five promotions, leading SaaS implementations, client success, and cross-functional delivery.</li>
-            <li>Led 12+ EnerGov implementations across U.S. municipalities as primary client contact, reducing post-go-live defects by 30%.</li>
-            <li>Managed 8+ client-facing SaaS implementation projects for the Tyler DHD product line as Technical Project Manager.</li>
-            <li>Secured $250K+ in upsell revenue and maintained 100% client retention as Principal Consultant.</li>
+            <li><strong style="color:var(--text);font-weight:500;">Post-acquisition platform integration:</strong> led the multi-year integration of the acquired DHD environmental health platform into Tyler's enterprise permitting and land management system, converting a standalone product into a native module of the enterprise suite, directing the migration to a browser-based HTML architecture, and transitioning a client base of roughly 200 municipal and agency customers over approximately two years.</li>
+            <li>Built and standardized the PMO delivery framework for the DHD platform including project charters, RAID logs, RACI matrices, go-live readiness checklists, and PM SOPs, lifting on-time delivery from 60% to 85% and resource utilization from 60% to 80%.</li>
+            <li>Led 12+ SaaS implementations of the EP&amp;L permitting and land management platform across U.S. municipalities including the City of Atlanta, LA County, City of Henderson, and City of Richmond, reducing post-go-live defects 30%.</li>
+            <li>Owned project budgets, vendor coordination, ArcGIS spatial integrations, data migration, and go-live cutover, and translated municipal ordinances into configured system workflows and inspection routing rules.</li>
+            <li>Mentored 3 direct reports resulting in 2 promotions and 100% retention, and secured $250K+ in upsell revenue while maintaining 100% client retention as Principal Consultant.</li>
           </ul>
-          <div class="exp-tags"><span class="exp-tag">Municipal SaaS</span><span class="exp-tag">Client-Facing Delivery</span><span class="exp-tag">EnerGov</span><span class="exp-tag">Agile</span></div>
+          <div class="exp-tags"><span class="exp-tag">Post-Acquisition Integration</span><span class="exp-tag">Municipal SaaS</span><span class="exp-tag">PMO Build-Out</span><span class="exp-tag">ArcGIS</span><span class="exp-tag">Data Migration</span></div>
         </div>
       </div>
     </div>
@@ -415,28 +426,48 @@
           </svg>
           <div class="consulting-logo-text">
             <a href="https://inkredibleservice.com/" target="_blank" rel="noopener" class="consulting-logo-name" style="text-decoration:none;color:inherit;">Inkredible Service LLC</a>
-            <div class="consulting-logo-llc">Independent Consulting &nbsp;·&nbsp; <a href="https://inkredibleservice.com/" target="_blank" rel="noopener" style="color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(138,110,47,0.4);transition:color 0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#8a6e2f'">inkredibleservice.com</a></div>
+            <div class="consulting-logo-llc">Principal Consultant &nbsp;·&nbsp; 2022 to Present &nbsp;·&nbsp; <a href="https://inkredibleservice.com/" target="_blank" rel="noopener" style="color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(138,110,47,0.4);transition:color 0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#8a6e2f'">inkredibleservice.com</a></div>
           </div>
         </div>
+        <p class="consulting-note fade-in">Independent practice delivering banking platform implementation, enterprise program management, and AI-enabled delivery tooling. The client engagements below ran concurrently with full-time roles.</p>
         <div class="consulting-grid">
           <div class="consulting-card fade-in">
-            <div class="consulting-client"><a href="https://inkredibleservice.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(138,110,47,0.35);">Inkredible Service LLC</a> — Moody's</div>
-            <div class="consulting-role">Senior Project Manager</div>
+            <div class="consulting-head">
+              <div class="consulting-client">Moody's</div>
+              <span class="consulting-date">Mar 2023 &ndash; Dec 2024</span>
+            </div>
+            <div class="consulting-role">CreditLens Implementation</div>
             <div class="consulting-context">Enterprise Banking Clients</div>
             <ul class="exp-bullets">
-              <li>Led end-to-end implementations of Moody's CreditLens for enterprise banking clients, ensuring on-time delivery and compliance alignment.</li>
-              <li>Managed nCino-to-CreditLens API integrations to enable seamless data flow and improve underwriting accuracy across distributed banking systems.</li>
-              <li>Established Agile delivery processes, coordinated cross-functional stakeholders, and provided post-implementation support to drive adoption.</li>
+              <li>Led end-to-end implementations of the Moody's CreditLens credit risk platform for enterprise banking clients, ensuring on-time delivery and alignment with regulatory and compliance requirements.</li>
+              <li>Delivered multiple nCino to CreditLens API integrations connecting loan origination to credit risk management, reducing manual processing time and improving underwriting accuracy.</li>
+              <li>Partnered with client executives, credit officers, and technical stakeholders on requirements, integration design, configuration, and deployment, and provided post-implementation support and training.</li>
             </ul>
           </div>
           <div class="consulting-card fade-in">
-            <div class="consulting-client">Kreative Core Technologies</div>
-            <div class="consulting-role">Delivery Manager</div>
-            <div class="consulting-context">Municipal ERP Projects</div>
+            <div class="consulting-head">
+              <div class="consulting-client">Kreative Core Technologies</div>
+              <span class="consulting-date">Apr 2022 &ndash; Mar 2023</span>
+            </div>
+            <div class="consulting-role">Municipal ERP Delivery</div>
+            <div class="consulting-context">U.S. Cities and Municipalities</div>
             <ul class="exp-bullets">
-              <li>Managed end-to-end delivery of Tyler EnerGov and Munis ERP projects for municipal clients including City of Lancaster, TX and City of Oxnard, CA.</li>
-              <li>Coordinated GIS integrations, stakeholder communication, and API work to deliver a unified Total Tyler experience across permitting and ERP modules.</li>
-              <li>Directed design, data migration, and cutover planning across multiple concurrent municipal implementations.</li>
+              <li>Led the Tyler EP&amp;L permitting and land management implementation for the City of Oxnard, CA from discovery through go-live, translating municipal ordinances into configured system workflows.</li>
+              <li>Concurrently directed Munis ERP, Enterprise Justice, and Enterprise Public Safety implementations for the City of Lancaster, TX across solution design, data migration, training, and cutover.</li>
+              <li>Coordinated GIS integrations and cross-product API work to deliver a unified experience across permitting and ERP modules.</li>
+            </ul>
+          </div>
+          <div class="consulting-card fade-in">
+            <div class="consulting-head">
+              <div class="consulting-client">AI-Enabled Delivery Tooling</div>
+              <span class="consulting-date">2025 &ndash; Present</span>
+            </div>
+            <div class="consulting-role">Self-Directed Build Work</div>
+            <div class="consulting-context">Inkredible Service LLC</div>
+            <ul class="exp-bullets">
+              <li>Designed and prototyped a hierarchical multi-agent system in which a managerial agent orchestrates four sub-agents monitoring phone intake, financial reporting, HR compliance, and marketing into a daily executive digest with prioritized escalations.</li>
+              <li>Built PM CoachBot, a Slack-based program management assistant wired to Jira and Asana, and Release-Risk Radar, a Power BI dashboard flagging high-risk releases from CI/CD pipeline metrics.</li>
+              <li>Apply Claude and Cursor directly to delivery operations, including RAID log automation and executive status synthesis.</li>
             </ul>
           </div>
         </div>
@@ -449,7 +480,7 @@
         <p class="section-label">Agentic AI</p>
         <h2 class="section-title">AI Agents &amp; Experiments</h2>
         <div class="gold-rule"></div>
-        <p class="agents-intro">Applying program management and systems thinking to the design and prototyping of multi-agent AI systems. These projects explore how autonomous agents can coordinate, escalate, and deliver operational intelligence for small business owners — reducing overhead and surfacing what matters.</p>
+        <p class="agents-intro">Applying program management and systems thinking to the design and prototyping of multi-agent AI systems. These projects explore how autonomous agents coordinate, escalate, and deliver operational intelligence for small business owners, reducing overhead and surfacing what matters.</p>
         <div class="agent-system fade-in">
           <div class="agent-system-header">
             <div>
@@ -458,11 +489,11 @@
             </div>
             <span class="agent-status">Prototype &nbsp;·&nbsp; Deploying Soon</span>
           </div>
-          <div class="agent-desc">A hierarchical multi-agent system built around a central Managerial Agent that orchestrates four specialized sub-agents running in parallel. Each sub-agent monitors a specific operational domain — phone queue, financials, HR compliance, and marketing — and reports structured summaries upward. The Managerial Agent synthesizes these inputs into a daily executive digest with prioritized escalations, giving small business owners a clear picture of what needs attention without manually tracking every system. Designed and prototyped for a law office use case, with plans to generalize across small business verticals.</div>
+          <div class="agent-desc">A hierarchical multi-agent system built around a central Managerial Agent that orchestrates four specialized sub-agents running in parallel. Each sub-agent monitors a specific operational domain covering phone queue, financials, HR compliance, and marketing, and reports structured summaries upward. The Managerial Agent synthesizes these inputs into a daily executive digest with prioritized escalations, giving small business owners a clear picture of what needs attention without manually tracking every system. Designed and prototyped for a law office use case, with plans to generalize across small business verticals.</div>
           <div class="sub-agents">
             <div class="sub-agent"><span class="sub-agent-icon">📞</span><div class="sub-agent-name">Phone Queue Agent</div><div class="sub-agent-desc">Handles inbound calls, routes new leads, completes intake forms, schedules consultations, and sends follow-up confirmations.</div></div>
             <div class="sub-agent"><span class="sub-agent-icon">📊</span><div class="sub-agent-name">Reporting Agent</div><div class="sub-agent-desc">Generates daily financial summaries covering AR, trust account balances, collected revenue, and pending payroll runs.</div></div>
-            <div class="sub-agent"><span class="sub-agent-icon">👥</span><div class="sub-agent-name">HR Agent</div><div class="sub-agent-desc">Monitors employee compliance deadlines — CLE credits, bar renewals, PTO balances — and surfaces upcoming risks before they become issues.</div></div>
+            <div class="sub-agent"><span class="sub-agent-icon">👥</span><div class="sub-agent-name">HR Agent</div><div class="sub-agent-desc">Monitors employee compliance deadlines including CLE credits, bar renewals, and PTO balances, surfacing upcoming risks before they become issues.</div></div>
             <div class="sub-agent"><span class="sub-agent-icon">📣</span><div class="sub-agent-name">Sales &amp; Marketing Agent</div><div class="sub-agent-desc">Tracks ad campaign performance, cost-per-lead thresholds, lead pipeline status, and flags unresponded reviews for follow-up.</div></div>
           </div>
           <div class="agent-integrations">
@@ -485,10 +516,10 @@
         <h2 class="section-title">Technical Expertise</h2>
         <div class="gold-rule"></div>
         <div class="expertise-grid">
-          <div class="expertise-card fade-in"><span class="expertise-icon">⬡</span><div class="expertise-name">Systems Architecture</div><ul class="expertise-list"><li>Microservices Architecture</li><li>Distributed Systems</li><li>Event-Driven Architecture</li><li>REST API Integrations</li><li>Service-Oriented Architecture</li><li>System Interoperability</li></ul></div>
-          <div class="expertise-card fade-in"><span class="expertise-icon">◈</span><div class="expertise-name">Platform &amp; Delivery</div><ul class="expertise-list"><li>End-to-End SDLC Ownership</li><li>Product Roadmaps &amp; PRDs</li><li>PMO Build-Out &amp; Transformation</li><li>CI/CD and DevOps Delivery</li><li>Agile, Scrum, Kanban, SAFe</li><li>Release &amp; Risk Management</li></ul></div>
-          <div class="expertise-card fade-in"><span class="expertise-icon">◎</span><div class="expertise-name">AI &amp; Data</div><ul class="expertise-list"><li>AI/ML System Integrations</li><li>Agentic AI Design &amp; Prototyping</li><li>Multi-Agent Orchestration</li><li>Data Pipelines</li><li>Cloud Platforms (Azure)</li><li>Automated Credit Decisioning</li></ul></div>
-          <div class="expertise-card fade-in"><span class="expertise-icon">◇</span><div class="expertise-name">Leadership &amp; Influence</div><ul class="expertise-list"><li>Cross-Org Influence Without Authority</li><li>Executive Stakeholder Alignment</li><li>Client-Facing Delivery</li><li>Matrixed Team Leadership</li><li>Compliance Programs (PCI-SSF)</li><li>Business-to-Engineering Translation</li></ul></div>
+          <div class="expertise-card fade-in"><span class="expertise-icon">⬡</span><div class="expertise-name">Platform &amp; Systems</div><ul class="expertise-list"><li>Post-Acquisition Platform Integration</li><li>Enterprise System Migrations</li><li>Event-Driven Architecture</li><li>REST API Integrations</li><li>Cloud Migration (Azure)</li><li>System Interoperability</li></ul></div>
+          <div class="expertise-card fade-in"><span class="expertise-icon">◈</span><div class="expertise-name">Program &amp; Delivery</div><ul class="expertise-list"><li>Technical Program Management</li><li>End-to-End SDLC Ownership</li><li>Product Roadmaps &amp; PRDs</li><li>Portfolio Governance</li><li>Agile, Scrum, Kanban, SAFe</li><li>Release &amp; Risk Management</li></ul></div>
+          <div class="expertise-card fade-in"><span class="expertise-icon">◎</span><div class="expertise-name">AI &amp; Data</div><ul class="expertise-list"><li>AI/ML System Integrations</li><li>Agentic AI Design &amp; Prototyping</li><li>Multi-Agent Orchestration</li><li>Automated Credit Decisioning</li><li>AI-Assisted Delivery Operations</li><li>Power BI &amp; SQL</li></ul></div>
+          <div class="expertise-card fade-in"><span class="expertise-icon">◇</span><div class="expertise-name">Transformation &amp; Leadership</div><ul class="expertise-list"><li>PMO &amp; EPMO Build-Out</li><li>Operating Model Design</li><li>Capacity-Based Planning</li><li>Organizational Change Management</li><li>Executive &amp; C-Suite Advisory</li><li>Matrixed Team Leadership</li></ul></div>
         </div>
       </div>
     </div>
@@ -514,7 +545,7 @@
           <p class="section-label">Let's Connect</p>
           <h2 class="section-title">Get in Touch</h2>
           <div class="gold-rule" style="margin:0 auto 2rem;"></div>
-          <p style="color:var(--text-dim);max-width:500px;margin:0 auto 2rem;font-size:0.95rem;">Open to senior TPM, Principal PM, and Director-level program leadership roles. Also available for consulting engagements through <a href="https://inkredibleservice.com/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);">Inkredible Service LLC</a>.</p>
+          <p style="color:var(--text-dim);max-width:520px;margin:0 auto 2rem;font-size:0.95rem;">Open to Senior Technical Program Manager, Senior Program Manager, and PMO leadership roles. Also available for consulting engagements through <a href="https://inkredibleservice.com/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);">Inkredible Service LLC</a>.</p>
           <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
             <a href="mailto:hamzak40@gmail.com" class="btn-primary">hamzak40@gmail.com</a>
             <a href="https://linkedin.com/in/hamza-khan-80614587" target="_blank" class="btn-secondary">LinkedIn</a>
